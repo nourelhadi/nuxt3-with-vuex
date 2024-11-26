@@ -15,7 +15,7 @@
 </script>
 
 <template>
-  <h1>Hello World!</h1>
+  <h1 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Hello World!</h1>
   <span>Counter: {{ counter }}</span>
   <br>
 

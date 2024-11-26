@@ -30,9 +30,9 @@ const store = createStore({
         }
     },
     actions: {
-        nuxtServerInit({dispatch, commit}, payload) {
+        nuxtServerInit({dispatch, commit}, context) {
             console.log('nuxtServerInit -- Was Dispatched!!');
-            commit('user/setUser', payload);
+            dispatch('user/nuxtServerInit', context);
         },
         addCounter ({ commit }, payload) {
             console.log('Was Dispatched');

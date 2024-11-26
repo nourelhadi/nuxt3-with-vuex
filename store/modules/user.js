@@ -15,8 +15,11 @@ export default {
         listing: state => state.users,
     },
     actions: {
-        nuxtServerInit({ commit }, payload) {
-            commit('setUser', payload);
+        nuxtServerInit({ commit }, {$axios}) {
+            $axios.get('https://jsonplaceholder.typicode.com/users').then(res => {
+                console.log(res.data)
+                commit('setUser', res.data);
+            })
         }
     }
 }
