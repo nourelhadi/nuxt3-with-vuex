@@ -1,10 +1,12 @@
 import { createStore } from 'vuex'
 import user from './modules/user'
+import link from './modules/link'
 
 // Create a new store instance.
 const store = createStore({
     modules: {
         user,
+        link,
     },
     state () {
         return {
