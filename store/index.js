@@ -1,11 +1,15 @@
 import { createStore } from 'vuex'
+import user from './modules/user'
 
 // Create a new store instance.
 const store = createStore({
+    modules: {
+        user,
+    },
     state () {
         return {
             counter: 0,
-            username: null
+            username: 'No One'
         }
     },
     getters: {
@@ -28,7 +32,7 @@ const store = createStore({
     actions: {
         nuxtServerInit({dispatch, commit}, payload) {
             console.log('nuxtServerInit -- Was Dispatched!!');
-            commit('setUsername', payload);
+            commit('user/setUser', payload);
         },
         addCounter ({ commit }, payload) {
             console.log('Was Dispatched');
